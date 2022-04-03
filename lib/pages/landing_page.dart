@@ -31,7 +31,7 @@ class LandingPage extends StatelessWidget {
               child: MaterialButton(
                 padding: const EdgeInsets.all(20),
                 onPressed: () {
-                  Navigator.popAndPushNamed(context, '/home');
+                  Navigator.popAndPushNamed(context, '/drawer');
                 },
                 shape: const StadiumBorder(),
                 color: Theme.of(context).colorScheme.primaryContainer,

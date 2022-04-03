@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ui/pages/home_pade.dart';
+import 'package:ui/pages/drawer_page.dart';
 
 import 'pages/landing_page.dart';
 
@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/landing': (context) => const LandingPage(),
-        '/home': (context) => const HomePage(),
+        '/drawer': (context) => const DrawerPage(),
       },
       title: 'Finance UI',
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color.fromRGBO(19, 14, 14, 1),
+        scaffoldBackgroundColor: const Color.fromRGBO(0, 3, 31, 1),
         colorScheme: const ColorScheme.dark(
           brightness: Brightness.dark,
           primary: Color.fromRGBO(0, 3, 31, 1),
