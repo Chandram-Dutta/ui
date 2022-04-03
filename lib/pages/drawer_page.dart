@@ -15,7 +15,7 @@ class DrawerPage extends ConsumerWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
-        iconSize: 20,
+        iconSize: 25,
         type: BottomNavigationBarType.fixed,
         backgroundColor: Theme.of(context).colorScheme.primary,
         showSelectedLabels: false,

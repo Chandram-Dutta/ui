@@ -11,51 +11,223 @@ class Home extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(40),
-                  bottomRight: Radius.circular(40),
+      child: SingleChildScrollView(
+        physics: const PageScrollPhysics(),
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(40),
+                    bottomRight: Radius.circular(40),
+                  ),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.45,
+                    width: MediaQuery.of(context).size.width,
+                    child: Stack(children: [
+                      CustomPaint(
+                        painter: AppBarBG(context: context),
+                      ),
+                    ]),
+                  ),
                 ),
-                child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.45,
-                  width: MediaQuery.of(context).size.width,
-                  child: Stack(children: [
-                    CustomPaint(
-                      painter: AppBarBG(context: context),
-                    ),
-                  ]),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 40,
+                    horizontal: 20,
+                  ),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Portfolio",
+                        style: Theme.of(context).textTheme.headline5?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                      const Spacer(),
+                      CupertinoButton(
+                        child: Icon(
+                          CupertinoIcons.line_horizontal_3_decrease,
+                          color: Theme.of(context).colorScheme.primaryContainer,
+                        ),
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
                 ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 20,
+                horizontal: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 10,
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      "Portfolio",
-                      style: Theme.of(context).textTheme.headline5?.copyWith(
-                            fontWeight: FontWeight.bold,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        "Services",
+                        style: Theme.of(context).textTheme.headline6?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                      const Spacer(),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "See All",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall
+                              ?.copyWith(
+                                color: Theme.of(context).colorScheme.secondary,
+                              ),
+                        ),
+                      )
+                    ],
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    physics: const BouncingScrollPhysics(),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ActionButton(
+                          children: [
+                            Icon(
+                              CupertinoIcons.qrcode_viewfinder,
+                              color: Theme.of(context).colorScheme.secondary,
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Scan & Pay",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  ),
+                            )
+                          ],
+                        ),
+                        ActionButton(
+                          children: [
+                            Icon(
+                              CupertinoIcons.arrow_up_circle_fill,
+                              color: Theme.of(context).colorScheme.secondary,
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Send Money",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  ),
+                            )
+                          ],
+                        ),
+                        ActionButton(
+                          children: [
+                            Icon(
+                              CupertinoIcons.arrow_down_circle_fill,
+                              color: Theme.of(context).colorScheme.secondary,
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Receive Money",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 20,
+                horizontal: 20,
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    "Charts",
+                    style: Theme.of(context).textTheme.headline6?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                  const Spacer(),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "See All",
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: Theme.of(context).colorScheme.secondary,
                           ),
                     ),
-                    const Spacer(),
-                    CupertinoButton(
-                      child:
-                          const Icon(CupertinoIcons.line_horizontal_3_decrease),
-                      color: Colors.white,
-                      onPressed: () {},
-                    )
-                  ],
-                ),
+                  )
+                ],
               ),
-            ],
-          )
-        ],
+            ),
+            Placeholder()
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ActionButton extends StatelessWidget {
+  const ActionButton({
+    Key? key,
+    required this.children,
+  }) : super(key: key);
+
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 25.0, top: 20),
+      child: MaterialButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        onPressed: () {},
+        height: 125,
+        minWidth: 125,
+        splashColor: Theme.of(context).colorScheme.primary,
+        color: Theme.of(context).colorScheme.primaryContainer,
+        hoverColor: Theme.of(context).colorScheme.secondaryContainer,
+        child: Column(
+          children: children,
+        ),
       ),
     );
   }
@@ -83,9 +255,9 @@ class AppBarBG extends CustomPainter {
     canvas.drawCircle(
       const Offset(
         0,
-        100,
+        150,
       ),
-      200,
+      250,
       circle,
     );
   }

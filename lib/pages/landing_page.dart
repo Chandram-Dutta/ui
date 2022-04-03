@@ -21,7 +21,7 @@ class LandingPage extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
-                    .headline4
+                    .headline3
                     ?.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
