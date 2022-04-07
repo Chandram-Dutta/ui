@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatelessWidget {
   const Home({
@@ -12,7 +13,7 @@ class Home extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: SingleChildScrollView(
-        physics: const PageScrollPhysics(),
+        physics: const ClampingScrollPhysics(),
         child: Column(
           children: [
             Stack(
@@ -195,7 +196,24 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
-            Placeholder()
+            const ListTile(
+              leading: Icon(CupertinoIcons.bitcoin_circle_fill),
+              iconColor: Colors.yellowAccent,
+              title: Text("BTC"),
+              subtitle: Text("+ 1.6%"),
+            ),
+            const ListTile(
+              leading: FaIcon(FaIcon.),
+              iconColor: Colors.yellowAccent,
+              title: Text("BTC"),
+              subtitle: Text("+ 1.6%"),
+            ),
+            const ListTile(
+              leading: Icon(CupertinoIcons.bitcoin_circle_fill),
+              iconColor: Colors.yellowAccent,
+              title: Text("BTC"),
+              subtitle: Text("+ 1.6%"),
+            )
           ],
         ),
       ),
