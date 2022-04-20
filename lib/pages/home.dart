@@ -294,7 +294,7 @@ class Home extends StatelessWidget {
                   children: const [
                     Text("+ 1.6%"),
                     Spacer(),
-                    Text("2.67 BTC"),
+                    Text("2.57 BTC"),
                   ],
                 ),
               ),
