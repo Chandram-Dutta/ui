@@ -184,10 +184,8 @@ class Tabs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: OutlineButton(
-        shape: const StadiumBorder(),
+      child: ElevatedButton(
         onPressed: () {},
-        borderSide: const BorderSide(color: Colors.white),
         child: Text(
           name,
           style: const TextStyle(
