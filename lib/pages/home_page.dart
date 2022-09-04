@@ -3,6 +3,7 @@ import 'package:circle_bottom_navigation_bar/widgets/tab_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ui/providers.dart';
+import 'package:ui/widgets/partners_scaffold.dart';
 
 import '../widgets/home_scaffold.dart';
 
@@ -19,7 +20,7 @@ class HomePage extends ConsumerWidget {
           case 1:
             return const Center(child: Text('Services'));
           case 2:
-            return const Center(child: Text('Partners'));
+            return const PartnersScaffold();
           case 3:
             return const Center(child: Text('Activity'));
           default:

@@ -71,12 +71,29 @@ class HomeScaffold extends ConsumerWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Your next events",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium
-                          ?.copyWith(fontWeight: FontWeight.bold),
+                    child: Row(
+                      children: [
+                        Text(
+                          "Your next events",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        const Spacer(),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "View all",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodySmall
+                                ?.copyWith(
+                                    color:
+                                        Theme.of(context).colorScheme.primary),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   SingleChildScrollView(
@@ -100,7 +117,70 @@ class HomeScaffold extends ConsumerWidget {
                   )
                 ],
               ),
-            )
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              color: Theme.of(context).colorScheme.background,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.primary,
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                          image: NetworkImage("https://picsum.photos/200/300"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(
+                            height: 100,
+                          ),
+                          Text(
+                            "Buisness Meet",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .background),
+                          )
+                        ],
+                      ),
+                      width: MediaQuery.of(context).size.width,
+                      height: 150,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        child: TextButton(
+                            onPressed: () {},
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: const [
+                                Icon(Icons.calendar_month),
+                                Text("Register"),
+                              ],
+                            )),
+                        width: MediaQuery.of(context).size.width,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
           ],
         ),
       ),
@@ -115,34 +195,37 @@ class EventButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
-          borderRadius: BorderRadius.circular(10),
-          image: DecorationImage(
-            image: NetworkImage(image),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 50,
+    return GestureDetector(
+      onTap: () {},
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary,
+            borderRadius: BorderRadius.circular(10),
+            image: DecorationImage(
+              image: NetworkImage(image),
+              fit: BoxFit.cover,
             ),
-            Text(
-              "Buisness Meet",
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.background),
-            )
-          ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 50,
+              ),
+              Text(
+                "Buisness Meet",
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.background),
+              )
+            ],
+          ),
+          width: 200,
+          height: 100,
         ),
-        width: 200,
-        height: 100,
       ),
     );
   }
