@@ -83,7 +83,7 @@ class LoginPage extends ConsumerWidget {
                   SizedBox(
                     height: 50,
                     width: MediaQuery.of(context).size.width,
-                    child: FilledButton(
+                    child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, '/home');
                       },
